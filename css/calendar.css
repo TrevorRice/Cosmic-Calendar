@@ -1,0 +1,89 @@
+html {
+	background: url('file:///home/trevor/Pictures/Wallpapers/eso1006a.jpg') no-repeat center center fixed;
+	/*overflow: hidden;*/
+	background-size: cover;
+	background-position: center center
+}
+body {
+	/*background: #fff;*/
+	color: white;
+	font-weight: 400;
+	font-size: 1em;
+	line-height: 1.25;
+	font-family: 'Raleway', Calibri, Arial, sans-serif;
+}
+
+/* Header */
+/*.large-header {
+	position: relative;
+	width: 100%;
+	background: #333;
+	background-image: url('file:///home/trevor/Pictures/Wallpapers/eso1006a.jpg');
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+}*/
+
+.main-title {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: #f9f1e9;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+
+	text-transform: uppercase;
+	font-size: 4.2em;
+	letter-spacing: 0.1em;
+}
+
+.main-title .thin {
+	font-weight: 200;
+}
+
+@media only screen and (max-width : 768px) {
+	.main-title {
+		font-size: 3em;
+	}
+}
+
+.fixed-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.calendar {
+	width: 100%;
+	padding: 0 10px 0 10px;
+}
+
+.col-1-4 {
+		border: 1px solid white;
+		margin: -1px 0 0 -1px;
+		float: left;
+		height: 280px;
+		width: 25%;
+	}
+
+.calendar {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
