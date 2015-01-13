@@ -1,41 +1,108 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Cosmic Calendar</title>
+    <title>Cosmic Calendar</title>
 		<link rel="stylesheet" type="text/css" href="css/calendar.css">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css">
-		<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<div class="container">
-			<div class="content">
-				<div id="large-header" class="large-header">
-					<canvas class="demo-canvas"></canvas>
-					<div class="sticky"><h1 class="main-title">Cosmic <span class="thin">Calendar</span></h1></div>
-				</div>
-				<div class="calendar">
-					<div class="row clearfix">
-						<div class="col-1-4" id="month-1"><h3>January</h3></div>
-						<div class="col-1-4" id="month-2"><h3>February</h3></div>
-						<div class="col-1-4" id="month-3"><h3>March</h3></div>
-						<div class="col-1-4" id="month-4"><h3>April</h3></div>
-					</div>
-					<div class="row clearfix">
-						<div class="col-1-4" id="month-5"><h3>May</h3></div>
-						<div class="col-1-4" id="month-6"><h3>June</h3></div>
-						<div class="col-1-4" id="month-7"><h3>July</h3></div>
-						<div class="col-1-4" id="month-8"><h3>August</h3></div>
-					</div>
-					<div class="row clearfix">
-						<div class="col-1-4" id="month-9"><h3>September</h3></div>
-						<div class="col-1-4" id="month-10"><h3>October</h3></div>
-						<div class="col-1-4" id="month-11"><h3>November</h3></div>
-						<div class="col-1-4" id="month-12"><h3>December</h3></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="js/calendar.js"></script>
+		<!-- <div id="container" class="container"> -->
+    <main>
+			<header class="intro" id="intro">
+        <canvas id="intro-canvas"></canvas>
+        <h1 class="main-title">Cosmic <span class="thin">Calendar</span></h1>
+      </header><!-- /intro -->
+      <!-- <button class="trigger" data-info="Click"><span>Trigger</span></button> -->
+			<section class="calendar-wrap">
+				<div class="month">
+          <h2 class="month_name">January</h2>
+          <div class="days">
+            <div></div><div></div><div></div><div></div>
+            <a href="#0" data-type="jan-1"><div>1</div></a><div>2</div><div>3</div><div>4</div><div>5</div>
+            <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+            <div>11</div><div>12</div><div>13</div><div>14</div><div>15</div>
+            <div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
+            <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div>
+            <div>26</div><div>27</div><div>28</div><div>29</div><div>30</div>
+            <div>31</div><div></div><div></div><div></div><div></div><div></div>
+            <div></div><div></div>
+          </div>
+        </div>
+        <div class="month">
+          <h2 class="month_name">February</h2>
+        </div>
+        <div class="month">
+          <h2 class="month_name">March</h2>
+        </div>
+        <div class="month">
+          <h2 class="month_name">April</h2>
+        </div>
+        <div class="month">
+          <h2 class="month_name">May</h2>
+        </div>
+        <div class="month">
+          <h2 class="month_name">June</h2>
+        </div>
+        <div class="month">
+          <h2 class="month_name">July</h2>
+        </div>
+        <div class="month">
+          <h2 class="month_name">August</h2>
+        </div>
+        <div class="month">
+          <h2 class="month_name">September</h2>
+        </div>
+        <div class="month">
+          <h2 class="month_name">October</h2>
+        </div>
+        <div class="month">
+          <h2 class="month_name">November</h2>
+        </div>
+        <div class="month">
+          <h2 class="month_name">December</h2>
+        </div>
+			</section>
+      <div class="cal-overlay"></div>
+    </main>
+      <div class="month-info jan-1">
+        <div class="info-pic">
+          <img src="img/ujKaaIATKKx7vi5kkfQn__DSC3932.jpg" alt="Picture">
+        </div>
+        <div class="info-content">
+          <h1>January 1 - 13.7 Billion Years Ago</h1>
+          <ul class="jan1_timeline">
+            <li>
+              <time class="jan1_time" datetime="2015-01-01"><span>00:00</span></time>
+              <div class="jan1_icon"></div>
+              <div class="jan1_label">
+                <h2>Big Bang</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure quas deleniti doloremque, ut magni nemo ex commodi est tempore voluptates, aperiam minus nulla ipsam hic repellat culpa odit. Voluptatibus, est?</p>
+              </div>
+            </li>
+            <li>
+              <time class="jan1_time" datetime="2015-01-01"><span>00:01</span></time>
+              <div class="jan1_icon"></div>
+              <div class="jan1_label">
+                <h2>Something Else</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam perferendis repellendus tempora culpa recusandae dicta, minima ad. Voluptate, minima doloremque similique expedita iusto voluptatibus cupiditate, eos natus ullam, soluta amet.</p>
+              </div>
+            </li>
+            <li>
+              <time class="jan1_time" datetime="2015-01-01"><span>00:02</span></time>
+              <div class="jan1_icon"></div>
+              <div class="jan1_label">
+                <h2>Something Else</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam perferendis repellendus tempora culpa recusandae dicta, minima ad. Voluptate, minima doloremque similique expedita iusto voluptatibus cupiditate, eos natus ullam, soluta amet.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a href="#0" class="month-info-close">Close</a> <!-- close the author bio section -->
+		<!-- </div> -->
+
+    <script type="text/javascript" src="/home/trevor/Projects/Temp/jquery-2.1.1.min.js"></script>
+    <!-- <script scr="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script src="js/calendar.js"></script>
 	</body>
 </html>
