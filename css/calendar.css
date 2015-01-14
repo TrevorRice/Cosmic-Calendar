@@ -174,7 +174,11 @@ img {
   display: none;
 }
 
-.month-info img {
+/*.month-info img {
+  width: 100%;
+  display: block;
+}*/
+.month-info video {
   width: 100%;
   display: block;
 }
