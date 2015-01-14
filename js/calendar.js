@@ -1,4 +1,5 @@
-jQuery(document).ready(function($){
+//jQuery(document)
+$('document').ready(function($){
     var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
 
     //Open date content
