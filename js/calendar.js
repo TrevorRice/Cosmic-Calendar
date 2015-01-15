@@ -140,9 +140,9 @@ Star.prototype.draw = function() {
     
     ctx.beginPath();
     ctx.arc(this.x,this.y,this.radius, Math.PI * 2,false);
-    ctx.fillStyle="rgba(255, 255, 200, " + this.opacity + ")";
-    ctx.shawdowBlur = 5;
-    ctx.shawdowColor = '#ffff33';
+    ctx.fillStyle="rgba(255, 255, 255, " + this.opacity + ")";
+    ctx.shadowBlur = 5;
+    ctx.shadowColor = '#ffff33';
     ctx.fill();
     ctx.restore();
 }
