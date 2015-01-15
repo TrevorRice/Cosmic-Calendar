@@ -82,8 +82,10 @@ $('document').ready(function($){
         // canvas.height = height;
     }
 
-    screenH = $(window).height();
-    screenW = $(window).width();
+    // screenH = $(window).height();
+    // screenW = $(window).width();
+    screenH = $('body').height();
+    screenW = $('body').width();
 
     canvas = document.getElementById('intro-canvas');
     canvas.height = screenH;
