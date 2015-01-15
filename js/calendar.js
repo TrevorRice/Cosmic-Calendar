@@ -82,10 +82,10 @@ $('document').ready(function($){
         // canvas.height = height;
     }
 
-    // screenH = $(window).height();
-    // screenW = $(window).width();
-    screenH = $('body').height();
-    screenW = $('body').width();
+    screenH = $(window).height();
+    screenW = $(window).width();
+    // screenH = $('body').height();
+    // screenW = $('body').width();
 
     canvas = document.getElementById('intro-canvas');
     canvas.height = screenH;
@@ -95,10 +95,10 @@ $('document').ready(function($){
     for(var i = 0; i < numStars; i++) {
         var x = Math.round(Math.random() * screenW);
         var y = Math.round(Math.random() * screenH);
-        var length = 1 + Math.random() * 2;
+        var radius = Math.random() * 3;
         var opacity = Math.random();
 
-        var star = new Star(x, y, length, opacity);
+        var star = new Star(x, y, radius, opacity);
 
         stars.push(star);
     }
@@ -113,10 +113,10 @@ function animate() {
     })
 }
 
-function Star(x, y, length, opacity) {
+function Star(x, y, radius, opacity) {
     this.x = parseInt(x);
     this.y = parseInt(y);
-    this.length = parseInt(length);
+    this.radius = radius;
     this.opacity = opacity;
     this.factor = 1;
     this.increment = Math.random() * .03;
@@ -126,35 +126,24 @@ Star.prototype.draw = function() {
     ctx.rotate((Math.PI * 1 / 10));
     ctx.save();
     ctx.translate(this.x, this.y);
-
+  
     if(this.opacity > 1) {
         this.factor = -1;
     }
     else if(this.opacity <= 0) {
         this.factor = 1;
-
         this.x = Math.round(Math.random() * screenW);
         this.y = Math.round(Math.random() * screenH);
     }
 
     this.opacity += this.increment * this.factor;
-
+    
     ctx.beginPath();
-
-    for (var i = 5; i--;) {
-        ctx.lineTo(0, this.length);
-        ctx.translate(0, this.length);
-        ctx.rotate((Math.PI * 2 / 10));
-        ctx.lineTo(0, - this.length);
-        ctx.translate(0, - this.length);
-        ctx.rotate(-(Math.PI * 6 / 10));
-    }
-
-    ctx.lineTo(0, this.length);
-    ctx.closePath();
-    ctx.fillStyle = "rgba(255, 255, 200, "+ this.opacity + ")";
+    ctx.arc(this.x,this.y,this.radius, Math.PI * 2,false);
+    ctx.fillStyle="rgba(255, 255, 200, " + this.opacity + ")";
     ctx.shawdowBlur = 5;
     ctx.shawdowColor = '#ffff33';
     ctx.fill();
     ctx.restore();
 }
+
