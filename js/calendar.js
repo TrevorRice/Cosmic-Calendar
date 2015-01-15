@@ -139,9 +139,14 @@ Star.prototype.draw = function() {
     this.opacity += this.increment * this.factor;
     
     ctx.beginPath();
+
+    var grd = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, 3 * this.radius);
+    grd.addColorStop(0, "rgba(255,255,255," + this.opacity +")");
+    grd.addColorStop(1, "rgba(255,255,200," + this.opacity +")");
+
     ctx.arc(this.x,this.y,this.radius, Math.PI * 2,false);
-    ctx.fillStyle="rgba(255, 255, 255, " + this.opacity + ")";
-    ctx.shadowBlur = 5;
+    ctx.fillStyle = grd;
+    ctx.shadowBlur = 50;
     ctx.shadowColor = '#ffff33';
     ctx.fill();
     ctx.restore();
