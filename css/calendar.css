@@ -51,10 +51,11 @@ html.overflow-hidden, body.overflow-hidden {
   font-weight: 200;
 }
 
-.sticky {
+.main-title.sticky {
   position: fixed;
+  padding: 20px;
   top: 0;
-  left: 0;
+  /*left: 0;*/
   z-index: 10;
 }
 

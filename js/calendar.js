@@ -65,8 +65,14 @@ $('document').ready(function($){
     }
 
     function addListeners() {
-        // window.addEventListener('scroll', scrollCheck);
+        window.addEventListener('scroll', scrollCheck);
         window.addEventListener('resize', resize);
+    }
+
+    function scrollCheck() {
+        if(document.body.scrollTop > height) {
+            $('.main-title').addClass('sticky');
+        }
     }
 
     function resize() {
@@ -77,6 +83,7 @@ $('document').ready(function($){
         // canvas.height = height;
     }
 
+    // Start creating stars to draw on canvas
     screenH = $(window).height();
     screenW = $(window).width();
 
@@ -99,6 +106,7 @@ $('document').ready(function($){
     setInterval(animate, 1000/fps);
 });
 
+// Draw and animate stars
 function animate() {
     ctx.clearRect(0, 0, screenW, screenH);
     $.each(stars, function() {
