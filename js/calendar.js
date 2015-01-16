@@ -11,12 +11,13 @@ var numStars = 1000;
 $('document').ready(function($){
     var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
 
-    //Open date content
+    //Open date content and start video
     $('.calendar-wrap').find('a').on('click', function(event){
         event.preventDefault();
         var selected_member = $(this).data('type');
         $('.month-info.'+selected_member+'').addClass('slide-in');
         $('.month-info-close').addClass('is-visible');
+        $('#jan-vid').get(0).play();
 
         // firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
         if( is_firefox ) {
@@ -32,11 +33,12 @@ $('document').ready(function($){
 
     });
 
-    //Close date content
+    //Close date content and pause video
     $(document).on('click', '.cal-overlay, .month-info-close', function(event){
         event.preventDefault();
         $('.month-info').removeClass('slide-in');
         $('.month-info-close').removeClass('is-visible');
+        $('#jan-vid').get(0).pause();
 
         if( is_firefox ) {
             $('main').removeClass('slide-out').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
