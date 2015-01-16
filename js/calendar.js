@@ -5,7 +5,7 @@ var screenH;
 var screenW;
 var stars = [];
 var fps = 50;
-var numStars = 2000;
+var numStars = 1000;
 
 //jQuery(document)
 $('document').ready(function($){
@@ -50,8 +50,6 @@ $('document').ready(function($){
         }
     });
 
-    // var width, height, largeHeader, canvas, ctx, points = true;
-
     // Main
     initHeader();
     addListeners();
@@ -62,11 +60,6 @@ $('document').ready(function($){
 
         largeHeader = document.getElementById('intro');
         largeHeader.style.height = height+'px';
-
-        // canvas = document.getElementById('intro-canvas');
-        // canvas.width = width;
-        // canvas.height = height;
-        // ctx = canvas.getContext('2d');
     }
 
     function addListeners() {
@@ -84,8 +77,6 @@ $('document').ready(function($){
 
     screenH = $(window).height();
     screenW = $(window).width();
-    // screenH = $('body').height();
-    // screenW = $('body').width();
 
     canvas = document.getElementById('intro-canvas');
     canvas.height = screenH;
