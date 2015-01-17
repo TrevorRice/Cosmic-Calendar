@@ -69,11 +69,25 @@ $('document').ready(function($){
         window.addEventListener('resize', resize);
     }
 
+    var titleOffset = document.getElementById('main-title').offsetTop - (document.getElementById('main-title').offsetHeight/2);
+
+    var titleOffsetHeight = document.getElementById('main-title').offsetHeight;
+
     function scrollCheck() {
-        if(document.body.scrollTop > height) {
-            $('.main-title').addClass('sticky');
-        }
-    }
+
+          if( window.pageYOffset > titleOffset && document.getElementById('main-title').className!='main-title sticky' ){          
+              document.getElementById('main-title').className='main-title sticky';          
+          } 
+
+          if( window.pageYOffset < titleOffset && document.getElementById('main-title').className!='main-title' ){
+              document.getElementById('main-title').className='main-title';
+          }
+
+          if( window.pageYOffset + titleOffsetHeight >   document.getElementsByClassName('calendar-wrap')[0].offsetTop ){
+              document.getElementById('main-title').className='main-title anchor';
+          }
+
+      }
 
     function resize() {
         width = window.innerWidth;

@@ -55,8 +55,15 @@ html.overflow-hidden, body.overflow-hidden {
   position: fixed;
   padding: 20px;
   top: 0;
-  /*left: 0;*/
   z-index: 10;
+  -webkit-transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%,0,0);
+}
+
+.main-title.anchor {
+  top: 100%;
+  -webkit-transform: translate3d(-50%,-100%,0);
+  transform: translate3d(-50%,-100%,0);
 }
 
 a {
