@@ -51,9 +51,21 @@ html.overflow-hidden, body.overflow-hidden {
   font-weight: 200;
 }
 
+@media only screen and (max-width: 768px) {
+  .intro .main-title {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .intro .main-title {
+    font-size: 2.5em;
+  }
+}
+
 .main-title.sticky {
   position: fixed;
-  padding: 20px;
+  padding: 20px 0 20px 0;
   top: 0;
   z-index: 10;
   -webkit-transform: translate3d(-50%,0,0);
@@ -83,13 +95,15 @@ img {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 10px;
+  /*padding: 0 40px 30px 40px;*/
 }
 
 .month {
-	background: rgba(249,241,233,0.2);
+	background: rgba(249,241,233,0.3);
   position: relative;
   overflow: hidden;
   height: 22vw;
+  /*height: 14vw;*/
   -webkit-flex: 1 0 25%;
   flex: 1 0 25%;
   outline: none;
@@ -105,7 +119,7 @@ img {
   top: 0;
   margin: 0;
   padding: 1em;
-  color: #dbdbdb;
+  color: #f9f1e9;
   font-size: 1.85em;
   line-height: 1;
   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
