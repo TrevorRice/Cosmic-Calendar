@@ -5,6 +5,7 @@ var screenH;
 var screenW;
 var titleOffset;
 var titleOffsetHeight;
+var year;
 // var stars = [];
 // var fps = 50;
 // var numStars = 1000;
@@ -81,8 +82,6 @@ $('document').ready(function($){
 
         titleOffset = document.getElementById('main-title').offsetTop - (document.getElementById('main-title').offsetHeight/2);
         titleOffsetHeight = document.getElementById('main-title').offsetHeight;
-        // canvas.width = width;
-        // canvas.height = height;
     }
 
     function scrollCheck() {
@@ -167,3 +166,27 @@ $('document').ready(function($){
 //     ctx.restore();
 // }
 
+$('.month').hover(
+    function() {
+        var year = new Date().getFullYear();
+        var monthNum = $(this).attr('id').split('month-')[1];
+        var startPosition = new Date(year, monthNum-1, 1).getDay();
+        var numDays = daysInMonth(monthNum, year);
+
+        $(this).append($('.days'));
+
+        for(var i = 0; i < numDays; i++) {
+            var curPosition = i + startPosition + 1;
+            $('div.days > div:nth-child(' + curPosition + ')').append(document.createTextNode(i+1));
+        }
+
+    }, function() {
+        $('div.days > div').contents().filter(function() {
+            return this.nodeType == 3;
+        }).remove();
+    }
+)
+
+function daysInMonth(month, year) {
+    return new Date(year, month, 0).getDate();
+}
