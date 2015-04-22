@@ -2,178 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Trevor Rice</title>
+  <title>Cosmic Calendar</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-  	<div class="nav-wrap">
-  		<a class="trev-logo" href="#page-top">Trevor Rice</a>
-  		<div class="nav-right">
-  			<ul>
-  				<li>
-  					<a id="a1" href="#portfolio">Portfolio</a>
-  				</li>
-  				<li>
-  					<a id="a2" href="#about">About</a>
-  				</li>
-  				<li>
-  					<a id ="a3" href="#contact">Contact</a>
-  				</li>
-  			</ul>
-  		</div>
-  	</div>
-  </nav>
-
-  <!-- Header -->
   <header>
-    <ul class="slideshow">
-      <li>
-        <span class="isvisible">Image 01</span>
-        <div>
-          <h3>Something</h3>
-        </div>
-      </li>
-      <li>
-        <span class="notvisible">Image 02</span>
-        <div>
-          <h3>Something</h3>
-        </div>
-      </li>
-      <li>
-        <span class="notvisible">
-          <video src="/video/Aurora%20Borealis-Stock%20Video.mov" autoplay loop muted></video>
-        </span>
-        <div>
-          <h3>Something</h3>
-        </div>
-      </li>
-    </ul>
-    <div id="arrow-left">
-      <i class="fa fa-chevron-left"></i>
-    </div>
-    <div id="arrow-right">
-      <i class="fa fa-chevron-right"></i>
-    </div>
+    <h1 class="main-title" id="main-title">Cosmic <span class="thin">Calendar</span></h1>
+    <div class="button"><span>Enter</span></div>
   </header>
-
-  <!-- Portfolio -->
-  <section id="portfolio">
-    <div class="heading">
-      <h2>Portfolio</h2>
-    </div>
-    <div class="grid">
-      <figure>
-        <img src="/img/1WQjDou.jpg" alt="">
-        <figcaption>
-          <div>
-            <h2>Project <span>One</span></h2>
-            <p>Something something something</p>
+  <section id="calendar">
+    <div id="wrapper">  
+      <div class="content">
+        <div id="cal-left">
+          <div id="time">X Years Ago</div>
+          <div id="month-wrapper">
+            <ul id="months">
+              <li class="month" id="month-1">Jan</li>
+              <li class="month" id="month-2">Feb</li>
+              <li class="month" id="month-3">Mar</li>
+              <li class="month" id="month-4">Apr</li>
+              <li class="month" id="month-5">May</li>
+              <li class="month" id="month-6">Jun</li>
+              <li class="month" id="month-7">Jul</li>
+              <li class="month" id="month-8">Aug</li>
+              <li class="month" id="month-9">Sep</li>
+              <li class="month" id="month-10">Oct</li>
+              <li class="month" id="month-11">Nov</li>
+              <li class="month" id="month-12">Dec</li>
+            </ul>
           </div>
-          <a class="project-1" href="#">View More</a>
-        </figcaption>
-      </figure>
-      <figure>
-        <img src="/img/uploads-141223808515744db9995-3361b5e1.jpg" alt="">
-        <figcaption>
-          <div>
-            <h2>Project <span>Two</span></h2>
-            <p>Something something something</p>
+          <div id="week-wrapper">
+            <ul id="weeks">
+              <li>Sun</li>
+              <li>Mon</li>
+              <li>Tue</li>
+              <li>Wed</li>
+              <li>Thu</li>
+              <li>Fri</li>
+              <li>Sat</li>
+            </ul>
           </div>
-          <a class="project-2" href="#">View More</a>
-        </figcaption>
-      </figure>
-      <figure>
-        <img src="/img/OQx70jjBSLOMI5ackhxm_urbex-ppc-030.jpg" alt="">
-        <figcaption>
-          <div>
-            <h2>Project <span>Three</span></h2>
-            <p>Something something something</p>
+          <div id="day-wrapper">
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
           </div>
-          <a class="project-3" href="#">View More</a>
-        </figcaption>
-      </figure>
-      <figure>
-        <img src="/img/uploads-14115409319165441c030-a1d0230a.jpg" alt="">
-        <figcaption>
-          <div>
-            <h2>Project <span>Four</span></h2>
-            <p>Something something something</p>
+        </div>
+        <div id="cal-right">
+          <div id="date-wrapper">
+            <h2>Friday</h2>
+            <h2>April 10th</h2>
           </div>
-          <a class="project-4" href="#">View More</a>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <div class="modal">
-    <div class="overlay"></div>
-    <div class="modal_content">
-      <a href="#" class="modal_close">X</a>
-      <h2>Project <span>Description</span></h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, voluptas voluptatem quod sit ipsa tempore atque, deserunt magnam modi quam eum. Quos, doloremque corporis laboriosam inventore earum nihil temporibus debitis.</p>
-    </div>
-  </div>
-
-  <!-- About -->
-  <section id="about">
-    <div class="heading">
-      <h2>About</h2>
-    </div>
-    <div class="about-wrap">
-      <div id="item-1">
-        <i class="fa fa-html5"></i>
-        <h3>HTML5</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit sunt rem amet? Magni ea illum libero! In a quae voluptatibus, totam eaque nihil libero ipsam nulla eius numquam fugit aperiam.</p>
-      </div>
-      <div id="item-2">
-        <i class="fa fa-css3"></i>
-        <h3>CSS3</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero accusantium laboriosam veritatis provident ipsum libero nobis nam perspiciatis architecto reprehenderit excepturi velit, necessitatibus voluptatibus a quas sit cupiditate sint! Beatae.</p>
-      </div>
-      <div id="item-3">
-        <i class="fa fa-code"></i>
-        <h3>Javascript</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, in voluptate atque. A, amet! Tenetur reiciendis porro accusamus dignissimos, error rem nesciunt quisquam enim earum illum cum fugit voluptatibus quo.</p>
+          <div id="info-wrapper">
+            <ul id="info">
+              <li>
+                <h5>00:16:32</h5>
+                <div>Some event happened.</div>
+              </li>
+              <li>
+                <h5>14:20:00</h5>
+                <div>Another event happened.</div>
+              </li>
+              <li>
+                <h5>21:11:12</h5>
+                <div>And another.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="heading">
-      <h2>Contact Me</h2>
-    </div>
-    <div class="contact-wrap">
-      <form action="">
-        <input type="text" name="first_name" placeholder="NAME" required>
-        <input type="email" name="email" placeholder="MAIL" required>
-        <textarea name="comments" placeholder="MESSAGE" required></textarea>
-        <button name="send" type="submit" class="submit">SEND</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="icon-wrap">
-      <div>
-        <i class="fa fa-github"></i>
-      </div>
-      <div>
-        <i class="fa fa-codepen"></i>
-      </div>
-      <div>
-        <i class="fa fa-facebook-official"></i>
-      </div>
-    </div>
-  </footer>
 
   <script src="lib/jquery-2.1.3.min/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
   <script src="js/script.js"></script>
+  <!-- <script src="js/background.js"></script> -->
   <script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

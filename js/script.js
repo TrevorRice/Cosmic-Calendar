@@ -1,135 +1,83 @@
 $(function(){
 
-	addListeners();
+	getDaysInMonth(1);
+	$('#month-1').addClass('month-selected');
 
 });
 
-function addListeners() {
-	$(window).scroll(animateNav);
-	$(window).scroll(highlightNav);
-}
+/**
+* Inserts the correct dates to given month
+* @param {monthNum} the number associated with a given month
+* @return textNodes for each month div
+*/
+function getDaysInMonth (monthNum) {
+	clearDays();
 
-function animateNav() {
-	setTimeout(function() {
-		var sy = window.pageYOffset || document.documentElement.scrollTop;
+	var totalNumDivs = 42;
+	var curYear = new Date().getFullYear();
+	var startDate = new Date(curYear, monthNum - 1, 1).getDay();
+	var numDays = numDaysInMonth(monthNum, curYear);
+	var prevMonthNum;
+	var numPrevDays;
 
-		if(sy >= 200) {
-			$('nav').addClass('shrink');
+	if (monthNum == 1)
+		prevMonthNum = 12;
+	else
+		prevMonthNum = monthNum - 1;
+
+	numPrevDays = numDaysInMonth(prevMonthNum, curYear);
+	
+	for (var i = 0; i < totalNumDivs + 1; i++) {
+		if (i < startDate + 1) {
+			var prevDate = numPrevDays - i;
+			$('div#day-wrapper > div:nth-child(' + (startDate - i) + ')').append(document.createTextNode(prevDate));
+			$('div#day-wrapper > div:nth-child(' + (startDate - i) + ')').addClass('non-cur-month');
+		} else if (i > startDate + numDays) {
+			var nextMonthDay = i - (numDays + startDate);
+			$('div#day-wrapper > div:nth-child(' + i + ')').append(document.createTextNode(nextMonthDay));
+			$('div#day-wrapper > div:nth-child(' + i + ')').addClass('non-cur-month');
+		} else {
+			var curDate = i - startDate;
+			$('div#day-wrapper > div:nth-child(' + i + ')').append(document.createTextNode(curDate));
 		}
-		else {
-			if($('nav').hasClass('shrink')) {
-				$('nav').removeClass('shrink');
-			}
-		}
-
-	}, 250);
-
-}
-
-/* Hightlight navigation buttons */
-function highlightNav() {
-	var portVal = $('#portfolio').offset().top - $(window).scrollTop();
-	var aboutVal = $('#about').offset().top - $(window).scrollTop();
-	var contactVal = $('#contact').offset().top - $(window).scrollTop();
-	var footVal = $('footer').offset().top - $(window).scrollTop();
-
-	if(portVal <= 70 && aboutVal > 70) {
-		$('.nav-right #a1').addClass('highlight');
-	}
-	else {
-		$('.nav-right #a1').removeClass('highlight');
-	}
-
-	if(aboutVal <= 70 && contactVal > 70) {
-		$('.nav-right #a2').addClass('highlight');
-	}
-	else {
-		$('.nav-right #a2').removeClass('highlight');
-	}
-
-	if(contactVal <= 70 && footVal > 70) {
-		$('.nav-right #a3').addClass('highlight');
-	}
-	else {
-		$('.nav-right #a3').removeClass('highlight');
 	}
 }
 
-/* Smooth scroll */
-var $root = $('html, body');
+/**
+* Returns the number of days in a month
+* @param {month} the value associated with a month
+* @param {year} the value of the current year
+* @return the number of days
+*/
+function numDaysInMonth (month, year) {
+	return new Date(year, month, 0).getDate();
+}
 
-$('.trev-logo').click(function() {
-	$root.animate({
-		scrollTop: 0
-	}, 500);
-	return false;
+/**
+* Removes all textNodes of day-wrapper
+* @return nothing
+*/
+function clearDays () {
+	$('div#day-wrapper > div').contents().filter(function() {
+		return this.nodeType == 3;
+	}).remove();
+}
+
+/**
+* On click, rearrange days
+*/
+$('.month').click(function() {
+	$('.month').removeClass('month-selected');
+	$('div#day-wrapper > div').removeClass('non-cur-month');
+	$(this).addClass('month-selected');
+	var monthNum = $(this).attr('id').split('month-')[1];
+	getDaysInMonth(monthNum);
 });
 
-$('.nav-right a').click(function() {
-	$root.animate({
-		scrollTop: $( $.attr(this, 'href') ).offset().top - 70
-	}, 500);
-	return false;
-});
-
-/* Toggle Modal */
-$('.project-1, .project-2, .project-3, .project-4').on('click', function() {
-	$('.modal').toggleClass('modal-show');
-	//$('body').toggleClass('overflow-hidden');
-	return false;
-});
-
-$('.overlay').on('click', function() {
-	$('.modal').toggleClass('modal-show');
-	//$('body').toggleClass('overflow-hidden');
-	return false;
-});
-
-$('.modal_close').on('click', function() {
-	$('.modal').toggleClass('modal-show');
-	//$('body').toggleClass('overflow-hidden');
-	return false;
-});
-
-/* Header carousel */
-$('#arrow-right').click(function() {
-	if($('.slideshow li:nth-child(1) span').hasClass('isvisible')) {
-		$('.slideshow li:nth-child(1) span').removeClass('isvisible');
-		$('.slideshow li:nth-child(1) span').addClass('notvisible');
-		$('.slideshow li:nth-child(2) span').removeClass('notvisible');
-		$('.slideshow li:nth-child(2) span').addClass('isvisible');
-	}
-	else if($('.slideshow li:nth-child(2) span').hasClass('isvisible')) {
-		$('.slideshow li:nth-child(2) span').removeClass('isvisible');
-		$('.slideshow li:nth-child(2) span').addClass('notvisible');
-		$('.slideshow li:nth-child(3) span').removeClass('notvisible');
-		$('.slideshow li:nth-child(3) span').addClass('isvisible');
-	}
-	else if($('.slideshow li:nth-child(3) span').hasClass('isvisible')) {
-		$('.slideshow li:nth-child(3) span').removeClass('isvisible');
-		$('.slideshow li:nth-child(3) span').addClass('notvisible');
-		$('.slideshow li:nth-child(1) span').removeClass('notvisible');
-		$('.slideshow li:nth-child(1) span').addClass('isvisible');
-	}
-});
-
-$('#arrow-left').click(function() {
-	if($('.slideshow li:nth-child(1) span').hasClass('isvisible')) {
-		$('.slideshow li:nth-child(1) span').removeClass('isvisible');
-		$('.slideshow li:nth-child(1) span').addClass('notvisible');
-		$('.slideshow li:nth-child(3) span').removeClass('notvisible');
-		$('.slideshow li:nth-child(3) span').addClass('isvisible');
-	}
-	else if($('.slideshow li:nth-child(2) span').hasClass('isvisible')) {
-		$('.slideshow li:nth-child(2) span').removeClass('isvisible');
-		$('.slideshow li:nth-child(2) span').addClass('notvisible');
-		$('.slideshow li:nth-child(1) span').removeClass('notvisible');
-		$('.slideshow li:nth-child(1) span').addClass('isvisible');
-	}
-	else if($('.slideshow li:nth-child(3) span').hasClass('isvisible')) {
-		$('.slideshow li:nth-child(3) span').removeClass('isvisible');
-		$('.slideshow li:nth-child(3) span').addClass('notvisible');
-		$('.slideshow li:nth-child(2) span').removeClass('notvisible');
-		$('.slideshow li:nth-child(2) span').addClass('isvisible');
-	}
+/**
+* On enter, display calendar and remove title
+*/
+$('.button').click(function() {
+	$('#calendar').addClass('display-cal');
+	$('header').addClass('hide-title');
 });

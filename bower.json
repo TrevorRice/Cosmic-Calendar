@@ -1,9 +1,9 @@
 {
-  "name": "mp1_starter",
+  "name": "Cosmic Calendar",
   "version": "1.0",
-  "homepage": "https://github.com/uiuc-web-programming/mp1_starter",
+  "homepage": "www.cosmiccalendar.io",
   "authors": [
-    "biplabdeka <biplab.deka@gmail.com>"
+    "Trevor Rice <trevorrr.rice@gmail.com>"
   ],
   "ignore": [
     "**/.*",

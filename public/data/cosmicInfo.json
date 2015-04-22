@@ -1,0 +1,271 @@
+[
+	{
+		"date": "Jan1",
+		"events": [
+			{
+				"time": "00:00:00",
+				"info": "The Big Bang"
+			},
+			{
+				"time": "00:15:00",
+				"info": "The formation of first neutral atoms"
+			}
+		]
+	},
+	{
+		"date": "Mar15",
+		"events": [
+			{
+				"time": "",
+				"info": "Milky Way Galaxy formed"
+			}
+		]
+	},
+	{
+		"date": "Aug31",
+		"events": [
+			{
+				"time": "",
+				"info": "Sun formed (planets and Earth's moon soon thereafter"
+			}
+		]
+	},
+	{
+		"date": "Sep16",
+		"events": [
+			{
+				"time": "",
+				"info": "Oldest rocks known on Earth"
+			}
+		]
+	},
+	{
+		"date": "Sep21",
+		"events": [
+			{
+				"time": "",
+				"info": "First life (prokaryotes)"
+			}
+		]
+	},
+	{
+		"date": "Oct12",
+		"events": [
+			{
+				"time": "",
+				"info": "Photosynthesis"
+			}
+		]
+	},
+	{
+		"date": "Oct29",
+		"events": [
+			{
+				"time": "",
+				"info": "Oxygenation of atmosphere"
+			}
+		]
+	},
+	{
+		"date": "Nov9",
+		"events": [
+			{
+				"time": "",
+				"info": "Complex cells (eukaryotes)"
+			}
+		]
+	},
+	{
+		"date": "Dec5",
+		"events": [
+			{
+				"time": "",
+				"info": "Fist multicellular life"
+			}
+		]
+	},
+	{
+		"date": "Dec7",
+		"events": [
+			{
+				"time": "",
+				"info": "Simple animals"
+			}
+		]
+	},
+	{
+		"date": "Dec14",
+		"events": [
+			{
+				"time": "",
+				"info": "Arthropods (ancestors of insects, arachnids)"
+			}
+		]
+	},
+	{
+		"date": "Dec17",
+		"events": [
+			{
+				"time": "",
+				"info": "Fish and proto-amphibians"
+			}
+		]
+	},
+	{
+		"date": "Dec20",
+		"events": [
+			{
+				"time": "",
+				"info": "Land plants"
+			}
+		]
+	},
+	{
+		"date": "Dec21",
+		"events": [
+			{
+				"time": "",
+				"info": "Insects and seeds"
+			}
+		]
+	},
+	{
+		"date": "Dec22",
+		"events": [
+			{
+				"time": "",
+				"info": "Amphibians"
+			}
+		]
+	},
+	{
+		"date": "Dec23",
+		"events": [
+			{
+				"time": "",
+				"info": "Reptiles"
+			}
+		]
+	},
+	{
+		"date": "Dec26",
+		"events": [
+			{
+				"time": "",
+				"info": "Mammals"
+			}
+		]
+	},
+	{
+		"date": "Dec27",
+		"events": [
+			{
+				"time": "",
+				"info": "Birds"
+			}
+		]
+	},
+	{
+		"date": "Dec28",
+		"events": [
+			{
+				"time": "",
+				"info": "Flowers"
+			}
+		]
+	},
+	{
+		"date": "Dec30",
+		"events": [
+			{
+				"time": "06:24:00",
+				"info": "Cretaceous-Paleogence extinction event, non-avian dinosaurs die out"
+			},
+			{
+				"time": "",
+				"info": "Primates"
+			}
+		]
+	},
+	{
+		"date": "Dec31",
+		"events": [
+			{
+				"time": "06:05:00",
+				"info": "Apes"
+			},
+			{
+				"time": "14:24:00",
+				"info": "Hominids"
+			},
+			{
+				"time": "22:24:00",
+				"info": "Primitive humans and stone tools"
+			},
+			{
+				"time": "23:44:00",
+				"info": "Domestication of fire"
+			},
+			{
+				"time": "23:52:00",
+				"info": "Anatomically modern humans"
+			},
+			{
+				"time": "23:55:00",
+				"info": "Beginning of most recent glacial period"
+			},
+			{
+				"time": "23:58:00",
+				"info": "Sculpture and painting"
+			},
+			{
+				"time": "23:59:32",
+				"info": "Agriculture"
+			},
+			{
+				"time": "23:59:47",
+				"info": "First writing"
+			},
+			{
+				"time": "23:59:48",
+				"info": "First dynasty of Egypt"
+			},
+			{
+				"time": "23:59:49",
+				"info": "Alphabet, Akkadian Empire, Wheel"
+			},
+			{
+				"time": "23:59:51",
+				"info": "Middle Kingdom of Egypt"
+			},
+			{
+				"time": "23:59:52",
+				"info": "Iron Agge in Near East, India, and Europe"
+			},
+			{
+				"time": "23:59:53",
+				"info": "Kingdom of Israel, ancient Olympic games"
+			},
+			{
+				"time": "23:59:54",
+				"info": "Buddha, Confucius, Classical Greece, Euclidean geometry"
+			},
+			{
+				"time": "23:59:55",
+				"info": "Roman Empire, Christ, invention of numeral 0"
+			},
+			{
+				"time": "23:59:56",
+				"info": "Muhammad, Maya civilization"
+			},
+			{
+				"time": "23:59:58",
+				"info": "Crusades, Christopher Columbus voyages to the Americas"
+			},
+			{
+				"time": "23:59:59",
+				"info": "Modern science and technology, World War II, Apollo Moon landing"
+			}
+		]
+	}
+]
