@@ -1,0 +1,552 @@
+html {
+  background: url('file:///home/trevor/Pictures/Wallpapers/eso1006a.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-position: center center;
+}
+
+html, body {
+  font-family: "Droid Sans", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* Hide scroll bar when content is visable */
+html.overflow-hidden, body.overflow-hidden {
+  overflow: hidden;
+}
+
+#intro-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.intro h1 {
+  margin: 0;
+}
+
+.intro {
+  position: relative;
+  width: 100%;
+}
+
+.intro .main-title {
+  font-family: 'Raleway', Calibri, Arial, sans-serif;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  color: #f9f1e9;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%,-50%,0);
+
+  text-transform: uppercase;
+  font-size: 4.2em;
+  letter-spacing: 0.1em;
+}
+
+.intro .main-title .thin {
+  font-weight: 200;
+}
+
+@media only screen and (max-width: 768px) {
+  .intro .main-title {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .intro .main-title {
+    font-size: 2.5em;
+  }
+}
+
+.intro .main-title.sticky {
+  position: fixed;
+  padding: 20px 0 20px 0;
+  top: 0;
+  z-index: 10;
+  -webkit-transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%,0,0);
+}
+
+.intro .main-title.anchor {
+  top: 100%;
+  -webkit-transform: translate3d(-50%,-100%,0);
+  transform: translate3d(-50%,-100%,0);
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.calendar-wrap {
+  /*background: grey;*/
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 10px;
+  /*padding: 0 40px 30px 40px;*/
+}
+
+.month {
+	background: rgba(249,241,233,0.3);
+  position: relative;
+  overflow: hidden;
+  height: 22vw;
+  /*height: 14vw;*/
+  -webkit-flex: 1 0 25%;
+  flex: 1 0 25%;
+  outline: none;
+  border: 2px solid #f9f1e9;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  margin: -2px;
+}
+
+.month_name {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 1em;
+  color: #f9f1e9;
+  font-size: 1.85em;
+  line-height: 1;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.month:hover .month_name {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 20px, 0);
+  transform: translate3d(0, 20px, 0);
+}
+
+.month:hover .days {
+  display: block;
+}
+
+.month .days {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.month .days div {
+  float: left;
+  height: 16.666666%;
+  width: 14.2857143%;
+  border: 1px solid white;
+  margin: -1px;
+}
+
+.month-info {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 270px;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #13222D;
+  z-index: 1;
+  -webkit-transform: translateX(270px);
+  -moz-transform: translateX(270px);
+  -ms-transform: translateX(270px);
+  -o-transform: translateX(270px);
+  transform: translateX(270px);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.month-info.slide-in {
+  /* the date info section slides in when the user clicks on a day */
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.month-info .info-pic {
+  position: relative;
+}
+
+.month-info .info-pic::after {
+  /* Gradient at bottom of image */
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: -webkit-linear-gradient( bottom, #13222D, rgba(19, 34, 45, 0));
+  background: linear-gradient(to top, #13222D, rgba(19, 34, 45, 0));
+}
+
+.no-cssgradients .month-info .info-pic::after {
+  display: none;
+}
+
+/*.month-info img {
+  width: 100%;
+  display: block;
+}*/
+.month-info video {
+  width: 100%;
+  display: block;
+}
+
+.month-info .info-content {
+  padding: 1em;
+  color: #fff;
+}
+
+.month-info .info-content h1 {
+  font-family: "Droid Sans", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+  font-size: 1.25rem;
+  color: #f9f1e9;
+}
+
+@media only screen and (min-width: 768px) {
+  .month-info {
+    width: 600px;
+    -webkit-transform: translateX(600px);
+    -moz-transform: translateX(600px);
+    -ms-transform: translateX(600px);
+    -o-transform: translateX(600px);
+    transform: translateX(600px);
+  }
+
+  .month-info .info-content {
+    padding: 2em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .month-info {
+    width: 800px;
+    -webkit-transform: translateX(800px);
+    -moz-transform: translateX(800px);
+    -ms-transform: translateX(800px);
+    -o-transform: translateX(800px);
+    transform: translateX(800px);
+  }
+
+  .month-info .info-pic::after {
+    height: 150px;
+  }
+
+  .month-info .info-content {
+    padding: 4em;
+    /* Move content up so title is over color gradient */
+    -webkit-transform: translateY(-80px);
+    -moz-transform: translateY(-80px);
+    -ms-transform: translateY(-80px);
+    -o-transform: translateY(-80px);
+    transform: translateY(-80px);
+  }
+
+  .month-info .info-content h1 {
+    font-size: 40px;
+    font-size: 2.5rem;
+  }
+
+  .no-cssgradients .month-info .info-content {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.month-info-close {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: url("../img/icon-close.svg") no-repeat center center;
+  text-indent: 100%;
+  white-space: nowrap;
+  z-index: 3;
+  display: none;
+}
+
+.month-info-close.is-visible {
+  display: block;
+  -webkit-animation: cd-move-in 0.8s;
+  -moz-animation: cd-move-in 0.8s;
+  animation: cd-move-in 0.8s;
+}
+
+@media only screen and (min-width: 1200px) {
+  .month-info-close {
+    right: 20px;
+    top: 20px;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+main.slide-out {
+  /* the main element slides to the left when the date content is visible */
+  -webkit-transform: translateX(-270px);
+  -moz-transform: translateX(-270px);
+  -ms-transform: translateX(-270px);
+  -o-transform: translateX(-270px);
+  transform: translateX(-270px);
+}
+
+main.slide-out .cal-overlay {
+  /* the overlay layer gets visible when the date content slides in */
+  display: block;
+  -webkit-animation: cd-fade-in 0.3s;
+  -moz-animation: cd-fade-in 0.3s;
+  animation: cd-fade-in 0.3s;
+}
+
+@media only screen and (min-width: 768px) {
+  main.slide-out {
+    /* change in size of the date info section */
+    -webkit-transform: translateX(-600px);
+    -moz-transform: translateX(-600px);
+    -ms-transform: translateX(-600px);
+    -o-transform: translateX(-600px);
+    transform: translateX(-600px);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main.slide-out {
+    -webkit-transform: translateX(-800px);
+    -moz-transform: translateX(-800px);
+    -ms-transform: translateX(-800px);
+    -o-transform: translateX(-800px);
+    transform: translateX(-800px);
+  }
+}
+
+.cal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.8);
+  cursor: pointer;
+  display: none;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1440px) {
+  .month {
+    -webkit-flex: 1 0 33.333%;
+    flex: 1 0 33.333%;
+    height: 30vw;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .month {
+    -webkit-flex: 1 0 50%;
+    flex: 1 0 50%;
+    height: 45vw;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .month {
+    -webkit-flex: 1 0 100%;
+    flex: 1 0 100%;
+    height: 90vw;
+  }
+}
+
+.jan1_timeline {
+  margin: 30px 0 0 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+/* The line */
+.jan1_timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background: #afdcf8;
+  left: 20%;
+  margin-left: -10px;
+}
+
+.jan1_timeline > li {
+  position: relative;
+}
+
+/* The time */
+.jan1_timeline > li .jan1_time {
+  display: block;
+  width: 25%;
+  padding-right: 100px;
+  position: absolute;
+}
+
+.jan1_timeline > li .jan1_time span:first-child {
+  font-size: 0.9em;
+  color: #bdd0db;
+}
+
+.jan1_timeline > li .jan1_time span: last-child {
+  font-size: 2.9em;
+  color: #3594cb;
+}
+
+.jan1_timeline > li:nth-child(odd) .jan1_time span:last-child {
+  color: #6cbfee;
+}
+
+/* Right Content */
+.jan1_timeline > li .jan1_label {
+  margin: 0 0 15px 25%;
+  background: #3594cb;
+  color: #fff;
+  padding: 2em;
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.4;
+  position: relative;
+  border-radius: 5px;
+}
+
+.jan1_timeline > li:nth-child(odd) .jan1_label {
+  background: #6cbfee;
+}
+
+.jan1_timeline > li .jan1_label h2 {
+  margin-top: 0px;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+/* The triangle */
+.jan1_timeline > li .jan1_label:after {
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-right-color: #3594cb;
+  border-width: 10px;
+  top: 10px;
+}
+
+.jan1_timeline > li:nth-child(odd) .jan1_label:after {
+  border-right-color: #6cbfee;
+}
+
+/* The circle */
+.jan1_timeline > li .jan1_icon {
+  width: 40px;
+  height: 40px;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 1.4em;
+  line-height: 40px;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  color: #fff;
+  background: #46a4da;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px #afdcf8;
+  text-align: center;
+  left: 20%;
+  top: 0;
+  margin: 0 0 0 -25px;
+}
+
+/* Timeline Media Queries */
+@media screen and (max-width: 65.375em) {
+  .jan1_timeline > li .jan1_time span:last-child {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 47.2em) {
+  .jan1_timeline:before {
+    display: none;
+  }
+
+  .jan1_timeline > li .jan1_time {
+    width: 100%;
+    position: relative;
+    padding: 0 0 20px 0;
+  }
+
+  .jan1_timeline > li .jan1_time span {
+    text-align: left;
+  }
+
+  .jan1_timeline > li .jan1_label {
+    margin: 0 0 30px 0;
+    padding: 1em;
+    font-weight: 400;
+    font-size: 95%;
+  }
+
+  .jan1_timeline > li .jan1_label:after {
+    right: auto;
+    left: 20px;
+    border-right-color: transparent;
+    border-bottom-color: #3594cb;
+    top: -20px;
+  }
+
+  .jan1_timeline > li:nth-child(odd) .jan1_label:after {
+    border-right-color: transparent;
+    border-bottom-color: #6cbfee;
+  }
+
+  .jan1_timeline > li .jan1_icon {
+    position: relative;
+    float: right;
+    left: auto;
+    margin: -55px 5px 0 0px;
+  }
+}
