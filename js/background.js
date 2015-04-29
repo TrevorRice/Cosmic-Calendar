@@ -37,8 +37,8 @@ container.appendChild(renderer.domElement);
 
 // Create particle variables
 var numParticles = 3000;
-var particleSize = 20;
-var movementSpeed = 80;
+var particleSize = 50;
+var movementSpeed = 10;
 var sizeRandomness = 4000;
 
 var directions = [];
@@ -61,8 +61,15 @@ function ExplodeAnimation (x,y) {
     directions.push({x:(Math.random() * movementSpeed)-(movementSpeed/2),y:(Math.random() * movementSpeed)-(movementSpeed/2),z:(Math.random() * movementSpeed)-(movementSpeed/2)});
   }
 
-  var material = new THREE.PointCloudMaterial( { size: particleSize,  color: 0xFFFFFF });
+  var material = new THREE.PointCloudMaterial({
+    size: particleSize,
+    color: 0xFFFFFF,
+    map: THREE.ImageUtils.loadTexture("/img/particle.png"),
+    blending: THREE.AdditiveBlending,
+    transparent: true
+  });
   var particles = new THREE.PointCloud( geometry, material );
+  particles.sortParticles = true;
   
   this.object = particles;
   this.status = true;
@@ -99,4 +106,4 @@ function render() {
   requestAnimFrame(render);
 }
 
-render();
+//render();

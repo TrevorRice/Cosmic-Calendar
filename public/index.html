@@ -10,13 +10,13 @@
 <body>
   <header>
     <h1 class="main-title" id="main-title">Cosmic <span class="thin">Calendar</span></h1>
-    <div class="button"><span>Enter</span></div>
+    <div class="button" id="enter"><span>Enter</span></div>
   </header>
   <section id="calendar">
     <div id="wrapper">  
       <div class="content">
         <div id="cal-left">
-          <div id="time">X Years Ago</div>
+          <div id="time"></div>
           <div id="month-wrapper">
             <ul id="months">
               <li class="month" id="month-1">Jan</li>
@@ -55,18 +55,6 @@
           </div>
           <div id="info-wrapper">
             <ul id="info">
-              <li>
-                <h5>00:16:32</h5>
-                <div>Some event happened.</div>
-              </li>
-              <li>
-                <h5>14:20:00</h5>
-                <div>Another event happened.</div>
-              </li>
-              <li>
-                <h5>21:11:12</h5>
-                <div>And another.</div>
-              </li>
             </ul>
           </div>
         </div>
@@ -75,9 +63,11 @@
   </section>
 
   <script src="lib/jquery-2.1.3.min/index.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
   <script src="js/script.js"></script>
-  <!-- <script src="js/background.js"></script> -->
+  <script src="js/background.js"></script>
   <script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

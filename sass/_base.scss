@@ -3,9 +3,9 @@
 
 
 body {
-	background-image: url(../img/uploads-141223808515744db9995-3361b5e1.jpg);
-  	background-size: cover;
-  	background-position: center center;
+	//background-image: url(../img/uploads-141223808515744db9995-3361b5e1.jpg);
+  	//background-size: cover;
+  	//background-position: center center;
 	color: rgba(249,241,233,1);
 	height: 100vh;
 	font-family: $source-sans;
@@ -32,4 +32,13 @@ body {
 // Hide title
 .hide-title {
 	display: none;
+}
+
+canvas {
+	z-index: -9999;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }

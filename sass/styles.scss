@@ -6,6 +6,7 @@
 @import "base";
 
 header {
+
 	.main-title {
 		font-family: $raleway;
 		font-size: 4.2em;
@@ -16,7 +17,7 @@ header {
 		margin: 0 auto;
 		top: 35%;
 		left: 50%;
-		transform: translateY(-50%);
+		//transform: translateY(-50%);
 		transform: translateX(-50%);
 
 		.thin {
@@ -29,7 +30,7 @@ header {
 		margin: 0 auto;
 		top: 90%;
 		left: 50%;
-		transform: translateY(-50%);
+		//transform: translateY(-50%);
 		transform: translateX(-50%);
 		cursor: pointer;
 
