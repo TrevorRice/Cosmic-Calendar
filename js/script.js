@@ -188,7 +188,7 @@ $('.month').click(function() {
 * On enter, display calendar and remove title
 */
 $('.button').click(function() {
-	render();
+	renderBang();
 	
 	$('#calendar').addClass('display-cal');
 

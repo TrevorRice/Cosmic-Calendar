@@ -97,13 +97,11 @@ function ExplodeAnimation (x,y) {
 
 parts.push(new ExplodeAnimation(0, 0));
 
-function render() {         
+function renderBang() {         
   var pCount = parts.length;
   while(pCount--) {
     parts[pCount].update();
   }
   renderer.render( scene, camera );
-  requestAnimFrame(render);
+  requestAnimFrame(renderBang);
 }
-
-//render();
