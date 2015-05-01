@@ -8,7 +8,8 @@ module.exports = function(grunt) {
       my_target: {
         files: {
           'public/js/script.js': ['js/script.js'],
-          'public/js/background.js': ['js/background.js']
+          'public/js/background.js': ['js/background.js'],
+          'public/js/earth.js': ['js/earth.js']
         } //files
       } //my_target
     }, //uglify

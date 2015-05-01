@@ -60,13 +60,13 @@ header {
 				width: 60%;
 				height: 100%;
 				float: left;
-				background-color: rgba(249,241,233,0.25);
+				background-color: rgba(249,241,233,0.4);
 				position: relative;
 
 				#time {
 					padding: 20px 20px;
 					font-size: 1.5em;
-					color: rgba(19,34,45,0.6);
+					color: rgba(249,241,233,1);
 				}
 
 				#month-wrapper {
@@ -138,6 +138,7 @@ header {
 				float: left;
 				background-color: rgba(19,34,45,0.65);
 				position: relative;
+				overflow: auto;
 
 				#date-wrapper {
 					position: absolute;

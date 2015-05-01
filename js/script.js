@@ -1,4 +1,6 @@
-var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "JUL", "Aug", "Sep", "Oct", "Nov", "Dec"];
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+var monthsFull = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 $(function(){
 
@@ -6,6 +8,7 @@ $(function(){
 	$('#month-1').addClass('month-selected');
 	getEvents(1,1);
 	displayNumYearsAgo(numYearsAgo(1,1));
+	displayDate(getDayString(0, 1), 0, 1);
 
 });
 
@@ -57,6 +60,16 @@ function numDaysInMonth (month, year) {
 	return new Date(year, month, 0).getDate();
 }
 
+function getDayString (month, dayNum) {
+	var date = new Date();
+	date.setMonth(month);
+	date.setDate(dayNum);
+	day = date.getDay();
+	var dayString = days[day];
+
+	return dayString;
+}
+
 /**
 * Removes all textNodes of day-wrapper
 * @return nothing
@@ -90,6 +103,10 @@ function getEvents (day, month) {
 				monthObject = data[key];
 			}
 		}
+
+		if (monthObject.events === undefined)
+			return;
+
 		eventLength = monthObject.events.length;
 
 		for(var i = 0; i < eventLength; i++) {
@@ -112,6 +129,7 @@ function numYearsAgo (day, month) {
 	var numPrevMonths = month - 1;
 	var totalNumDays = 0;
 	var curNumDays = parseInt(day);
+	var numYears;
 
 	while(numPrevMonths != 0) {
 		var numDays = numDaysInMonth(numPrevMonths, curYear);
@@ -120,11 +138,39 @@ function numYearsAgo (day, month) {
 	}
 
 	totalNumDays = totalNumDays + curNumDays;
-	return Math.round((totalAge - totalNumDays*eachDayYears) * 1000) / 1000;	
+
+	if (month == 12) {
+		numYears = Math.round((totalAge - totalNumDays*eachDayYears) * 1000 *1000) / 1000;
+	} else {
+		numYears = Math.round((totalAge - totalNumDays*eachDayYears) * 1000) / 1000;
+	}
+
+	return numYears;	
 }
 
-function displayNumYearsAgo (value) {
-	$("#time").text(value + " Billion Years Ago");
+function displayNumYearsAgo (value, month) {
+	if (month == 12) {
+		$("#time").text(value + " Million Years Ago");
+	} else {
+		$("#time").text(value + " Billion Years Ago");
+	}
+}
+
+function displayDate (value, month, day) {
+	var monthString = monthsFull[month];
+	$("#date-wrapper h2:first-child").text(value);
+	$("#date-wrapper h2:nth-child(2)").text(monthString + " " + day+ nth(day));
+}
+
+function nth(value) {
+	if (value > 3 && value < 21)
+		return 'th';
+	switch (value % 10) {
+		case 1: return 'st';
+		case 2: return 'nd';
+		case 3: return 'rd';
+		default: return 'th';
+	}
 }
 
 /**
@@ -145,17 +191,17 @@ $('.button').click(function() {
 	render();
 	
 	$('#calendar').addClass('display-cal');
-	//$('header').addClass('hide-title');
 
 	var title = document.getElementById("main-title");
-	TweenLite.to(title, 2, {
-		x: window.innerWidth,
-		y: -window.innerHeight
+	var enter = document.getElementById("enter");
+	TweenLite.to([title, enter], 1, {
+		z: 200
 	});
 
-	var enter = document.getElementById("enter");
-	TweenLite.to(enter, 2, {
-		y: window.innerHeight
+	var calendar = document.getElementById("calendar");
+	TweenLite.from(calendar, 1, {
+		z: -2000,
+		opacity: 0
 	});
 });
 
@@ -167,5 +213,6 @@ $('#day-wrapper').click(function(e) {
 	var month = $('#month-wrapper').find('.month-selected').attr('id').split('month-')[1];
 	
 	getEvents(day, month);
-	displayNumYearsAgo(numYearsAgo(day, month));
+	displayNumYearsAgo(numYearsAgo(day, month), month);
+	displayDate(getDayString(month-1, day), month-1, day);
 });

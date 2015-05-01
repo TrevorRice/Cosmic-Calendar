@@ -38,7 +38,7 @@ container.appendChild(renderer.domElement);
 // Create particle variables
 var numParticles = 3000;
 var particleSize = 50;
-var movementSpeed = 10;
+var movementSpeed = 80;
 var sizeRandomness = 4000;
 
 var directions = [];
